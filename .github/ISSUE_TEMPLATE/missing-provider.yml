@@ -1,0 +1,30 @@
+name: Missing provider
+description: Ask down.guide to track a provider, product or status page it doesn't cover yet.
+title: "[Provider] "
+labels: ["provider"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Provider or product
+      placeholder: Example Cloud, or Example Cloud Functions
+    validations:
+      required: true
+  - type: input
+    id: status_page
+    attributes:
+      label: Official status page
+      description: down.guide only reads a provider's own public status page.
+      placeholder: https://status.example.com
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Packages, hosts or environment variables that point to it
+      description: Optional. Helps the stack check map a project to this provider (npm or PyPI package names, API hosts, env var names like EXAMPLE_API_KEY).
+  - type: textarea
+    id: mapping
+    attributes:
+      label: Wrong mapping instead?
+      description: If the provider is listed but a package, host or env var maps to the wrong one, say which and what it should map to.

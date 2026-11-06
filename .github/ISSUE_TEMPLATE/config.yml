@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a vulnerability in down.guide itself
+    url: https://github.com/sazabi/down.guide/security/policy
+    about: Email security@sazabi.ai (see the security policy). Never post security problems in a public issue.
+  - name: A provider is down right now
+    url: https://down.guide
+    about: Check the provider's page on down.guide, or press "I'm seeing a problem" there. Issues here are for down.guide's own data and behavior.

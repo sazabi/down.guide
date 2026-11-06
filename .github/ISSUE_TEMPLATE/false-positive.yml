@@ -1,0 +1,40 @@
+name: Probe or early-warning false positive
+description: down.guide showed signs of a problem, or "stayed green", when the provider was fine.
+title: "[False positive] "
+labels: ["false-positive"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Early warnings need two kinds of evidence within 10 minutes (probes failing from two or more regions, a spike in reports, or posts from three or more accounts). Tell us which one misfired. Providers can dispute a "stayed green" entry here too; the denial is shown next to it.
+  - type: input
+    id: url
+    attributes:
+      label: down.guide URL
+      description: The early warning or incident page, or the provider page.
+      placeholder: https://down.guide/github/DWN-1a2b3c4d5e
+    validations:
+      required: true
+  - type: dropdown
+    id: evidence
+    attributes:
+      label: Which evidence was wrong?
+      options:
+        - Probes (an endpoint that fails for everyone, a region that can't reach it, a URL that changed)
+        - Visitor reports
+        - Social posts (posts about something else)
+        - Not sure
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What happened at the provider at that time, with a link if you have one. Never include credentials or customer data.
+    validations:
+      required: true
+  - type: input
+    id: affiliation
+    attributes:
+      label: Do you work for the provider?
+      description: Optional. Disputes from the provider are labeled as theirs.

@@ -1,0 +1,42 @@
+name: Wrong data
+description: An incident, provider state, uptime number or ranking on down.guide is wrong.
+title: "[Data] "
+labels: ["data"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        down.guide quotes each provider's own status page verbatim. If the provider's page itself is wrong, tell the provider; if down.guide shows something the page doesn't say, report it here.
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What's wrong?
+      options:
+        - An incident is missing, duplicated or attached to the wrong provider
+        - An incident's impact, start or end time is wrong
+        - A provider shows the wrong live state (down, degraded, not reporting)
+        - Uptime, downtime or a ranking looks wrong
+        - A plain-language summary or root cause is wrong
+        - Other
+    validations:
+      required: true
+  - type: input
+    id: url
+    attributes:
+      label: down.guide URL
+      description: The provider page, incident page (DWN- id) or ranking.
+      placeholder: https://down.guide/github/DWN-1a2b3c4d5e
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Details
+      description: What down.guide shows, and what it should show.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source
+      description: A link that backs the correction, ideally the provider's own status page or incident.
